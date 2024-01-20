@@ -46,9 +46,11 @@ echo -e "Preferred interface: $MAIN_IF\nPreferred Gateway:   $GW\nDNS Server:   
 ping_gateway
 ping_cloudflare_ip
 ping_google_dns
+echo -e "${Color_Off}"
 
 # check if --public-ip argument is passed
 if [[ " ${ARGS[*]} " == *"--public-ip"* ]]; then
+    check_dependencies
     public_ip
 fi
 
